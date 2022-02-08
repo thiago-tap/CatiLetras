@@ -1,3 +1,5 @@
+export const WORDS = ['thais']
+/*
 export const WORDS = [
   'Aarão',
   'Abner',
@@ -6026,3 +6028,4 @@ export const WORDS = [
   'úteis',
   'útero',
 ]
+*/

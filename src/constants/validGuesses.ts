@@ -1,5 +1,8 @@
+//export const VALID_GUESSES = ['thais']
 export const VALID_GUESSES = [
   'Aarão',
+  'Thais',
+  'thais',
   'Abner',
   'Acaia',
   'Acker',
