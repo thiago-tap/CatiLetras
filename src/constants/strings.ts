@@ -5,7 +5,8 @@ export const GAME_COPIED_MESSAGE = 'Jogo copiado para a área de transferência'
 export const ABOUT_GAME_MESSAGE = 'Sobre este jogo'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'Não há letras suficientes'
 export const WORD_NOT_FOUND_MESSAGE = 'Palavra não encontrada'
-export const CORRECT_WORD_MESSAGE = (solution: string) => `A palavra era ${solution}`
+export const CORRECT_WORD_MESSAGE = (solution: string) =>
+  `A palavra era ${solution}`
 export const ENTER_TEXT = 'Enter'
 export const DELETE_TEXT = 'Apagar'
 export const STATISTICS_TITLE = 'Estatisticas'
