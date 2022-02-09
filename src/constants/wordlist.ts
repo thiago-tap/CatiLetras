@@ -6026,4 +6026,4 @@ export const WORDS = [
   'úteis',
   'útero',
 ]
-export default WORDS;
+export default WORDS

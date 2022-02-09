@@ -6026,4 +6026,4 @@ export const VALID_GUESSES = [
   'úteis',
   'útero',
 ]
-export default VALID_GUESSES;
+export default VALID_GUESSES
