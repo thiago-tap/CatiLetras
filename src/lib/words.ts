@@ -1,10 +1,23 @@
 import { WORDS } from '../constants/wordlist'
 import { VALID_GUESSES } from '../constants/validGuesses'
 
-export const isWordInWordList = (word: string) => {
+export const removeDiacritics = (word: string): string => {
+  return word
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+}
+
+export const isWordInWordList = (wordx: string) => {
+  const palavra = WORDS.find(
+    (word) => removeDiacritics(word) === removeDiacritics(wordx)
+  )
+  const arrPalavra = []
+  arrPalavra.push(palavra)
+
   return (
-    WORDS.includes(word.toLowerCase()) ||
-    VALID_GUESSES.includes(word.toLowerCase())
+    WORDS.includes(arrPalavra.toString()) ||
+    VALID_GUESSES.includes(arrPalavra.toString())
   )
 }
 
