@@ -1,4 +1,3 @@
-export const WORDS = [
 'aarao',
 'abner',
 'acaia',
@@ -6025,4 +6024,3 @@ export const WORDS = [
 'urico',
 'uteis',
 'utero'
-]
