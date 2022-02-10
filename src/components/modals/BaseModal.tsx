@@ -9,6 +9,8 @@ type Props = {
   handleClose: () => void
 }
 
+//Mais um teste!
+
 export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
   return (
     <Transition.Root show={isOpen} as={Fragment}>

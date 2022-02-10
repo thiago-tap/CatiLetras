@@ -17,3 +17,5 @@ export const TOTAL_TRIES_TEXT = 'Total de tentativas'
 export const SUCCESS_RATE_TEXT = 'Taxa de sucesso'
 export const CURRENT_STREAK_TEXT = 'Sequência atual'
 export const BEST_STREAK_TEXT = 'Melhor sequência'
+
+//Teste!!!!!

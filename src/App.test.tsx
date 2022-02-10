@@ -19,6 +19,7 @@ beforeEach(() => {
   })
 })
 
+//Teste aqui TBM!
 test('renders App component', () => {
   render(<App />)
   const linkElement = screen.getByText(GAME_TITLE)
