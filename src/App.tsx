@@ -175,26 +175,30 @@ function App() {
   return (
     <div className="pt-2 pb-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div className="flex w-80 mx-auto items-center mb-8 mt-4">
-        <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-          {GAME_TITLE}
-        </h1>
+        <img
+          src="logo200x50.png"
+          alt="Catiteo"
+          width="150"
+          className="ml-2.5 "
+        />
+
         {isDarkMode ? (
           <SunIcon
-            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            className="h-6 w-10 mr-2 cursor-pointer dark:stroke-white"
             onClick={() => handleDarkMode(!isDarkMode)}
           />
         ) : (
           <MoonIcon
-            className="h-6 w-6 mr-2 cursor-pointer"
+            className="h-6 w-10 mr-2 cursor-pointer"
             onClick={() => handleDarkMode(!isDarkMode)}
           />
         )}
         <InformationCircleIcon
-          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+          className="h-6 w-10 mr-2 cursor-pointer dark:stroke-white"
           onClick={() => setIsInfoModalOpen(true)}
         />
         <ChartBarIcon
-          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+          className="h-6 w-10 mr-3 cursor-pointer dark:stroke-white"
           onClick={() => setIsStatsModalOpen(true)}
         />
       </div>
