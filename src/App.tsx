@@ -12,7 +12,7 @@ import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
 import {
-  //GAME_TITLE,
+  GAME_TITLE,
   WIN_MESSAGES,
   GAME_COPIED_MESSAGE,
   ABOUT_GAME_MESSAGE,
@@ -177,28 +177,27 @@ function App() {
       <div className="flex w-80 mx-auto items-center mb-8 mt-4">
         <img
           src="logo200x50.png"
-          alt="Catiteo"
+          alt={GAME_TITLE}
           width="150"
           className="ml-2.5 "
         />
-
         {isDarkMode ? (
           <SunIcon
-            className="h-6 w-10 mr-2 cursor-pointer dark:stroke-white"
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
             onClick={() => handleDarkMode(!isDarkMode)}
           />
         ) : (
           <MoonIcon
-            className="h-6 w-10 mr-2 cursor-pointer"
+            className="h-6 w-6 mr-2 cursor-pointer"
             onClick={() => handleDarkMode(!isDarkMode)}
           />
         )}
         <InformationCircleIcon
-          className="h-6 w-10 mr-2 cursor-pointer dark:stroke-white"
+          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
           onClick={() => setIsInfoModalOpen(true)}
         />
         <ChartBarIcon
-          className="h-6 w-10 mr-3 cursor-pointer dark:stroke-white"
+          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
           onClick={() => setIsStatsModalOpen(true)}
         />
       </div>
