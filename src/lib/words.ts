@@ -21,8 +21,14 @@ export const isWordInWordList = (wordx: string) => {
   )
 }
 
-export const isWinningWord = (word: string) => {
-  return solution === word
+export const isWinningWord = (wordx: string) => {
+  const palavra = WORDS.find(
+    (word) => removeDiacritics(word) === removeDiacritics(wordx)
+  )
+  const arrPalavra = []
+  arrPalavra.push(palavra)
+
+  return solution === arrPalavra.toString().toUpperCase()
 }
 
 export const getWordOfDay = () => {
