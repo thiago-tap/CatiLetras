@@ -175,12 +175,9 @@ function App() {
   return (
     <div className="pt-2 pb-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div className="flex w-80 mx-auto items-center mb-8 mt-4">
-        <img
-          src="logo200x50.png"
-          alt={GAME_TITLE}
-          width="150"
-          className="ml-2.5 "
-        />
+        <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
+          {GAME_TITLE}
+        </h1>
         {isDarkMode ? (
           <SunIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
