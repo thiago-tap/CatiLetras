@@ -1,4 +1,4 @@
-export const GAME_TITLE = process.env.REACT_APP_GAME_NAME!
+export const GAME_TITLE = 'CatiLetras!'
 
 export const WIN_MESSAGES = ['Ótimo trabalho!', 'Incrível', 'Muito bem!']
 export const GAME_COPIED_MESSAGE = 'Jogo copiado para a área de transferência'
