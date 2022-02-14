@@ -1,34 +1,43 @@
 import { WORDS } from '../constants/wordlist'
 import { VALID_GUESSES } from '../constants/validGuesses'
+import { WRONG_SPOT_MESSAGE, NOT_CONTAINED_MESSAGE } from '../constants/strings'
+import { getGuessStatuses } from './statuses'
 
-export const removeDiacritics = (word: string): string => {
-  return word
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-}
-
-export const isWordInWordList = (wordx: string) => {
-  const palavra = WORDS.find(
-    (word) => removeDiacritics(word) === removeDiacritics(wordx)
-  )
-  const arrPalavra = []
-  arrPalavra.push(palavra)
-
+export const isWordInWordList = (word: string) => {
   return (
-    WORDS.includes(arrPalavra.toString()) ||
-    VALID_GUESSES.includes(arrPalavra.toString())
+    WORDS.includes(word.toLowerCase()) ||
+    VALID_GUESSES.includes(word.toLowerCase())
   )
 }
 
-export const isWinningWord = (wordx: string) => {
-  const palavra = WORDS.find(
-    (word) => removeDiacritics(word) === removeDiacritics(wordx)
-  )
-  const arrPalavra = []
-  arrPalavra.push(palavra)
+export const isWinningWord = (word: string) => {
+  return solution === word
+}
 
-  return solution === arrPalavra.toString().toUpperCase()
+// build a set of previously revealed letters - present and correct
+// guess must use correct letters in that space and any other revealed letters
+export const findFirstUnusedReveal = (word: string, guesses: string[]) => {
+  const knownLetterSet = new Set<string>()
+  for (const guess of guesses) {
+    const statuses = getGuessStatuses(guess)
+
+    for (let i = 0; i < guess.length; i++) {
+      if (statuses[i] === 'correct' || statuses[i] === 'present') {
+        knownLetterSet.add(guess[i])
+      }
+      if (statuses[i] === 'correct' && word[i] !== guess[i]) {
+        return WRONG_SPOT_MESSAGE(guess[i], i + 1)
+      }
+    }
+  }
+
+  for (const letter of Array.from(knownLetterSet.values())) {
+    // fail fast, always return first failed letter if applicable
+    if (!word.includes(letter)) {
+      return NOT_CONTAINED_MESSAGE(letter)
+    }
+  }
+  return false
 }
 
 export const getWordOfDay = () => {
