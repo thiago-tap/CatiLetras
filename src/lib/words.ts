@@ -46,7 +46,9 @@ export const getWordOfDay = () => {
   const now = Date.now()
   const msInDay = 86400000
   //const index = Math.floor((now - epochMs) / msInDay)
-  const index = Math.floor(Math.random() * (Math.floor(13200) - Math.ceil(0) + 1)) + Math.ceil(0)
+  const index =
+    Math.floor(Math.random() * (Math.floor(13200) - Math.ceil(0) + 1)) +
+    Math.ceil(0)
   const nextday = (index + 1) * msInDay + epochMs
 
   return {
