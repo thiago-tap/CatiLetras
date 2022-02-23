@@ -49,7 +49,8 @@ export const getWordOfDay = () => {
   const min = Math.ceil(epochMs)
   const max = Math.floor(now)
   const index = Math.floor(Math.random() * (max - min + 1)) + min
-  const nextday = (index + 1) * msInDay + epochMs
+  const proxDia = Math.floor((now - epochMs) / msInDay)
+  const nextday = (proxDia + 1) * msInDay + epochMs
 
   return {
     solution: WORDS[index % WORDS.length].toUpperCase(),
